@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Linq {
+    class Program {
+        static void Main (string[] args) {
+
+            string s = "[]";
+            if (BalancedParantheseis (s)) { System.Console.WriteLine ("Balanced"); } else {
+                System.Console.WriteLine ("unbalanced");
+            }
+            Console.ReadLine ();
+        }
+        static bool BalancedParantheseis (string input) {
+            Dictionary<char, char> pairs = new Dictionary<char, char> ();
+            pairs.Add ('[', ']');
+            pairs.Add ('{', '}');
+            pairs.Add ('(', ')');
+            pairs.Add ('<', '>');
+            Stack<char> storeResult = new Stack<char> ();
+            char[] convertedString = input.ToCharArray ();
+
+            foreach (var item in convertedString) {
+                if (pairs.Keys.Contains (item)) {
+                    storeResult.Push (item);
+                } else if (pairs.Values.Contains (item)) {
+                    char getKey = pairs.FirstOrDefault (x => x.Value == item).Key;
+                    //Take stack top element and compare
+                    if (storeResult.Count () > 0 && storeResult.Peek () == getKey) {
+                        storeResult.Pop ();
+                    } else {
+                        return false;
+                    }
+                } else {
+                }
+            }
+            return storeResult.Count == 0 ? true : false;
+
+        }
+
+    }
+}

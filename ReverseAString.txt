@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Linq
+{
+    internal class Program
+    {
+
+
+        private static void Main(string[] args)
+        {
+            string s = "Kaushik";
+            char[] stringToChar = s.ToCharArray();
+            var t=stringToChar.Select((x, i) => new { value = x, index = i }).OrderByDescending(y=>y.index).ToList();
+            string newString = "";
+            foreach (var item in t)
+            {
+                newString += item.value;
+            }
+            Console.WriteLine(newString);
+            Console.ReadLine();
+        }
+      
+        
+    }
+}

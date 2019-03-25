@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+
+
+        private static void Main(string[] args)
+        {
+            Console.WriteLine(ReverseANumber(123));
+            Console.ReadLine();
+        }
+       static int ReverseANumber(int number)
+        {
+            int sum=0,rev = 0;
+            while (number > 0)
+            {
+                rev = number % 10;
+                sum = (sum * 10) + rev;
+                number = number / 10;
+            }
+            return sum;
+
+        }
+
+        
+    }
+}

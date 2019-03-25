@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using static System.Console;
+
+namespace Linq {
+    internal class Program {
+        private static void Main (string[] args) {
+            int j = 0, k = 0;
+            const int m = 5,
+                n = 4;
+            int last_col = n - 1, last_row = m - 1;
+            int[, ] A = new int[m, n] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 }, { 17, 18, 19, 20 } };
+            while (k <= last_row && j <= last_col) {
+                for (int i = k; i <= last_col; i++) {
+                    WriteLine (A[k, i]);
+                }
+                k++;
+                for (int i = k; i <= last_row; i++) {
+                    WriteLine (A[i, last_col]);
+                }
+                last_col--;
+                for (int i = last_col; i >= j; i--) {
+                    WriteLine (A[last_row, i]);
+                }
+                last_row--;
+                for (int i = last_row; i >= k; i--) {
+                    WriteLine (A[i, j]);
+                }
+                j++;
+            }
+            Console.ReadLine ();
+        }
+
+    }
+}

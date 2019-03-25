@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Linq
+{
+    internal class Program
+    {
+        private static Stack<int> s1 = new Stack<int>();
+        private static Stack<int> s2 = new Stack<int>();
+
+        private static void Main(string[] args)
+        {
+            Enqueue(1);
+            Enqueue(2);
+            Enqueue(3);
+            Dequeue();
+            Enqueue(3);
+            Enqueue(3);
+            Dequeue();
+            TotalCount();
+            Console.ReadLine();
+        }
+
+        private static void Enqueue(int num)
+        {
+            s1.Push(num);
+
+        }
+
+        private static void Dequeue()
+        {
+            if (s2.Count() == 0)
+            {
+                if (s1.Count() == 0)
+                {
+                    System.Console.WriteLine("No Records to Pop ");
+                }
+
+            }
+
+            if (s2.Count() == 0 && s1.Count() > 0)
+            {
+                while (s1.Count > 0)
+                {
+                    int ele = s1.Pop();
+                    s2.Push(ele);
+                }
+            }
+            System.Console.WriteLine($" Popped {s2.Pop()}");
+
+
+        }
+
+        private static void TotalCount()
+        {
+            System.Console.WriteLine($" count {s1.Count() + s2.Count()}");
+        }
+
+    }
+}

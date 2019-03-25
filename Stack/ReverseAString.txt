@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+
+
+        private static void Main(string[] args)
+        {
+            string s = "Kaushik";
+            string reversedString = "";
+            Stack<char> charArray = new Stack<char>();
+            char[] stringToChar = s.ToCharArray();
+            foreach (var item in stringToChar)
+            {
+                charArray.Push(item);
+            }
+           
+            foreach (var item in charArray)
+            {
+                reversedString += item;
+            }
+
+            Console.WriteLine(reversedString);
+            Console.ReadLine();
+        }
+
+        
+    }
+}

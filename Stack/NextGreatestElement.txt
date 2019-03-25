@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using static System.Console;
+
+namespace Linq {
+    internal class Program {
+        private static void Main (string[] args) {
+            int[] A = new int[] { 4, 6, 8, 1, 0, 5, 10, 12 };
+            Stack<int> nextG = new Stack<int> ();
+            foreach (var item in A) {
+                if (nextG.Count () == 0 || item < nextG.Peek ()) {
+                    nextG.Push (item);
+                } else {
+                    for (int i = 0; i <= nextG.Count (); i++) {
+                        if (item > nextG.Peek () && nextG.Count () >= 1) {
+                            WriteLine ($"{nextG.Peek()}--> {item}");
+                            nextG.Pop ();
+                        }
+                    }
+                    nextG.Push (item);
+
+                }
+            }
+            Console.ReadLine ();
+        }
+
+    }
+}

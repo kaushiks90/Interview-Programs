@@ -1,0 +1,42 @@
+﻿using System;
+
+namespace Linq
+{
+    internal class Program
+    {
+
+
+        private static void Main(string[] args)
+        {
+            Console.WriteLine(BinarySearch());
+
+            Console.ReadLine();
+        }
+
+        private static int BinarySearch()
+        {
+            int[] bs = new int[] { 1, 2, 3, 4, 5 };
+            int low = 0;
+            int high = bs.Length - 1;
+            int searchElement = 10;
+
+            while (low <= high)
+            {
+                int mid = (low + high) / 2;
+                if (searchElement == bs[mid])
+                {
+                    return mid+1;
+                }
+                if (searchElement < bs[mid])
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
+            }
+            return -1;
+        }
+    }
+}

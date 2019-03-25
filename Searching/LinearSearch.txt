@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Linq
+{
+    internal class Program
+    {
+       
+
+        private static void Main(string[] args)
+        {
+            int[] ls = new int[] { 1, 2, 3, 4, 5 };
+            int i = 0;
+            int searchElement = 6;
+            for ( i= 0; i <= ls.Length-1; i++)
+            {
+                if(ls[i]== searchElement)
+                {
+                    Console.WriteLine($"Element found at position {ls[i]}");
+                }
+            }
+            
+            Console.ReadLine();
+        }
+
+     
+
+    }
+}

@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Linq
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            int i=0, j=0;
+            const int m =4, n=4;
+            int[,] A = new int[m, n] { {1,2,3,4 },{5,6,7,8 },{ 9,10,11,12},{13,14,15,16 } };
+            Console.WriteLine("Diagonal from Left");
+            for (int k = 0; k <= m - 1; k++)
+            {
+                Console.WriteLine(A[k, k]);
+            }
+            Console.WriteLine("Diagonal from Right");
+            for (int k = m - 1; k >= 0; k--)
+            {
+                Console.WriteLine(A[i,k]);
+                i++;
+            }
+            Console.ReadLine();
+        }
+      
+        
+    }
+}
