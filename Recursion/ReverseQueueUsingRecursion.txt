@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+        static Queue<int> q = new Queue<int>();
+        private static void Main(string[] args)
+        {
+
+            q.Enqueue(1);
+            q.Enqueue(2);
+            q.Enqueue(3);
+            Console.WriteLine($" Before recursion {q.Peek()}");
+            ReverseQueueRecursion();
+            Console.WriteLine($" After recursion {q.Peek()}");
+            Console.ReadLine();
+        }
+        static void ReverseQueueRecursion()
+        {
+            if (q.Count == 0)
+            {
+                return;
+            }
+            int data = q.Dequeue();
+            ReverseQueueRecursion();
+            q.Enqueue(data);
+
+        }
+
+
+    }
+}

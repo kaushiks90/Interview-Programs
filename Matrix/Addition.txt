@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using static System.Console;
+
+namespace Linq {
+    internal class Program {
+        private static void Main (string[] args) {
+            const int a = 2, b = 3;
+            int[,] m = new int[a, b] { { 2, 4,3 }, { 6,8,1 } };
+            int[,] n = new int[a,b] { {4,6,3 }, { 5,2,7 } };
+
+            for (int i = 0; i <a; i++)
+            {
+                for (int j = 0; j <b; j++)
+                {
+                    Console.WriteLine(m[i,j]+n[i,j]);
+                }
+            }
+            Console.ReadLine ();
+        }
+       
+
+
+
+    }
+}

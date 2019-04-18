@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        private static readonly bool flag = false;
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(stringLength("dad"));
+            Console.ReadLine();
+        }
+
+        private static int stringLength(string str)
+        {
+            if (str == "")
+            {
+                return 0;
+            }
+            int res = stringLength(str.Substring(1));
+            res = res + 1;
+            return res;
+        }
+
+
+    }
+
+}
+
+

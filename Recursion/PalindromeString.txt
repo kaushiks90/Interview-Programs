@@ -1,0 +1,46 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        static bool flag = false;
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(ispalindrome("dad"));
+            Console.ReadLine();
+        }
+        public static bool ispalindrome(string str)
+        {
+            int n = str.Length;
+            if (n == 0)
+            {
+                return true;
+            }
+            return ispalRec(str, 0, n - 1);
+
+        }
+
+        public static bool ispalRec(string str, int n, int m)
+        {
+            if (n == m)
+            {
+                flag = true;
+                return flag;
+            }
+            if (str[m] != str[n])
+            {
+                flag = false;
+                return flag;
+            }
+            if (n <= m)
+            
+              ispalRec(str, n + 1, m - 1);
+              return flag;
+
+        }
+    }
+
+}
+
+

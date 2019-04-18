@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+        static Stack<int> s = new Stack<int>();
+        private static void Main(string[] args)
+        {
+
+            s.Push(1);
+            s.Push(2);
+            s.Push(3);
+            Console.WriteLine($" Before recursion {s.Peek()}");
+            ReverseStackRecursion();
+            Console.WriteLine($" After recursion {s.Peek()}");
+            Console.ReadLine();
+        }
+        static void ReverseStackRecursion()
+        {
+            if (s.Count == 0)
+            {
+                return;
+            }
+            int data = s.Pop();
+            ReverseStackRecursion();
+            insert_at_bottom(data);
+
+        }
+      
+        static void insert_at_bottom(int x)
+        {
+
+            if (s.Count == 0)
+                s.Push(x);
+
+            else
+            {             
+               int data= s.Pop();
+                insert_at_bottom(x);
+
+                s.Push(data);
+            }
+        }
+
+      
+
+
+    }
+}

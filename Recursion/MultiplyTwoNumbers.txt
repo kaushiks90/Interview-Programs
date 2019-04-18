@@ -1,0 +1,41 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Multiply(10,10));
+            Console.ReadLine();
+        }
+
+        public static int Multiply(int n1,int n2)
+        {
+            if(n1<0 || n2 < 0)
+            {
+                return 0;
+            }
+            if (n1 == 1)
+            {
+                return n2;
+            }
+            if (n2 == 1)
+            {
+                return n1;
+            }
+            if(n1==0 || n2 == 0)
+            {
+                return 0;
+            }
+            var mult = Multiply(n1, n2 - 1);
+            mult += n1;
+            return mult;
+
+        }
+
+    }
+   
+}
+
+

@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+        
+        private static void Main(string[] args)
+        {
+            int[] arr = { 4, 5, 7, 8, 9, 10 };
+
+           var res= BinarySearchRecursion(arr.Length - 1, 0,  arr, 4);
+            Console.WriteLine(res);
+            Console.ReadLine();
+        }
+
+       static int BinarySearchRecursion(int high,int low,int[] arr,int n)
+        {
+            if (high >= low)
+            {
+               int mid = (high + low) / 2;
+                if (arr[mid] == n)
+                {
+                    return mid;
+                }
+                else if (n > arr[mid])
+                {
+                    return BinarySearchRecursion(high, mid+1, arr, n);
+                }
+                else
+                {
+                    return BinarySearchRecursion(mid-1, low, arr, n);
+                }
+            }
+            return -1;
+            
+               
+        }
+    }
+}

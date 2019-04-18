@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+
+//Not working 
+namespace Linq
+{
+    internal class Program
+    {
+        private static Queue<int> q = new Queue<int>();
+        
+        private static void Main(string[] args)
+        {
+
+            push(1);
+            push(2);
+            push(3);
+            push(3);
+            pop();
+            pop();
+            Console.WriteLine($"Top {q.Peek()}");            
+            Console.ReadLine();
+        }
+
+        public static void push(int number)
+        {
+            q.Enqueue(number);
+            for (int i = 0; i <= q.Count; i++)
+            {
+                if (q.Peek() == number)
+                {
+                    break;
+                }
+                int x = q.Dequeue();
+                q.Enqueue(x);
+            }
+         
+        }
+        public static void pop()
+        {
+            Console.WriteLine($"Popped item {q.Dequeue()}");
+        }
+    }
+}

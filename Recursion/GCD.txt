@@ -1,0 +1,38 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(GCD(100, 23));
+            Console.ReadLine();
+        }
+        public static int GCD(int n, int m)
+        {
+            if (n == m)
+            {
+                return n;
+            }
+            if (n == 0)
+            {
+                return m;
+            }
+            if (m == 0)
+            {
+                return n;
+            }
+            if (n > m)
+            {
+                return GCD(n - m, m);
+            }
+
+            return GCD(m, m - n);
+
+        }
+    }
+
+}
+
+

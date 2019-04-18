@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Division(10,5));
+            Console.ReadLine();
+        }
+        public static int Division(int n,int d)
+        {
+            int c = 0;
+            if (n < d)
+            {
+                return c;
+            }
+            c = c + 1;
+            int res= Division(n - d, d);
+            res = res + c;
+            return res;
+           
+        }
+
+    }
+   
+}
+
+

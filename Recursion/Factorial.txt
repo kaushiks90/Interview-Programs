@@ -1,0 +1,28 @@
+﻿using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Factorial(5));
+            Console.ReadLine();
+        }
+
+        public static int Factorial(int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            int fact= Factorial(n - 1);
+            fact = fact * n;
+            return fact;
+        }
+
+    }
+   
+}
+
+

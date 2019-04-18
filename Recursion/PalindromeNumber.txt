@@ -1,0 +1,40 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        private static int r = 0;
+        private static int sum = 0;
+        public static void Main(string[] args)
+        {
+            int num = 121;
+            int res = ReverseANumber(num);
+            if (num == res)
+            {
+                Console.WriteLine("Palindrome");
+            }
+            else
+            {
+                Console.WriteLine("Not Palindrome");
+            }
+            Console.ReadLine();
+        }
+
+        public static int ReverseANumber(int n)
+        {
+
+            if (n == 0)
+            {
+                return 0;
+            }
+            r = n % 10;
+            sum = sum * 10 + r;
+            int res = ReverseANumber(n / 10);
+            return sum;
+        }
+    }
+
+}
+
+

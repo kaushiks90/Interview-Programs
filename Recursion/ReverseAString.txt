@@ -1,0 +1,30 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            string s = "Kaushik";
+            ReverseAString(s);
+            Console.ReadLine();
+        }
+
+        public static void ReverseAString(string n)
+        {
+            if(string.IsNullOrEmpty(n)||n=="")
+            {
+                Console.WriteLine(n);
+            }
+            if (n.Length >= 1)
+            {
+                Console.WriteLine(n[n.Length - 1]);
+                ReverseAString(n.Substring(0, n.Length - 1));
+            }            
+        }
+    }
+
+}
+
+

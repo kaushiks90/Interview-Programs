@@ -1,0 +1,28 @@
+using System;
+
+namespace ConsoleApp
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine(Fibonacci(5));
+            Console.ReadLine();
+        }
+       public static int Fibonacci(int n)
+        {
+            if (n == 1 ||n==0)
+            {
+                return 1;
+            }
+            int n1= Fibonacci(n - 1);
+            int n2 = Fibonacci(n - 2);
+            int sum= n1 + n2;
+            return sum;
+
+        }
+    }
+   
+}
+
+

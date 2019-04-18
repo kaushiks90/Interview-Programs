@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Linq
+{
+    internal class Program
+    {
+        private static Queue<int> q1 = new Queue<int>();
+        private static Queue<int> q2 = new Queue<int>();
+        private static void Main(string[] args)
+        {
+
+            push(1);
+            push(2);
+            push(3);
+            pop();
+            pop();
+            Console.WriteLine($"Top {q1.Peek()}");            
+            Console.ReadLine();
+        }
+
+		//Method 1 where push operation is costly
+
+        public static void push(int number)
+        {
+            q2.Enqueue(number);
+            while (q1.Count > 0)
+            {
+                q2.Enqueue(q1.Dequeue());
+            }
+            Queue<int> q = q1;
+            q1 = q2;
+            q2 = q;
+        }
+        public static void pop()
+        {
+            Console.WriteLine($"Removed{ q1.Dequeue()}");
+        }
+
+		//Method 2 where pop operation is costly
+
+		 public static void push(int number)
+        {
+            q1.Enqueue(number);
+        }
+        public static void pop()
+        {
+            while (q1.Count > 1)
+            {
+                q2.Enqueue(q1.Dequeue());
+            }
+            
+            Console.WriteLine(q1.Dequeue());
+            Queue<int> q = q1;
+            q1 = q2;
+            q2 = q;
+        }
+
+
+
+
+
+    }
+}
